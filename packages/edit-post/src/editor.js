@@ -17,7 +17,7 @@ import { StrictMode, Component } from '@wordpress/element';
 import {
 	KeyboardShortcuts,
 	SlotFillProvider,
-	DropZoneProvider,
+	__unstableDropZoneContextProvider as DropZoneContextProvider,
 } from '@wordpress/components';
 import { compose } from '@wordpress/compose';
 
@@ -136,7 +136,7 @@ class Editor extends Component {
 			<StrictMode>
 				<EditPostSettings.Provider value={ settings }>
 					<SlotFillProvider>
-						<DropZoneProvider>
+						<DropZoneContextProvider>
 							<EditorProvider
 								settings={ editorSettings }
 								post={ post }
@@ -153,7 +153,7 @@ class Editor extends Component {
 								</ErrorBoundary>
 								<PostLockedModal />
 							</EditorProvider>
-						</DropZoneProvider>
+						</DropZoneContextProvider>
 					</SlotFillProvider>
 				</EditPostSettings.Provider>
 			</StrictMode>
