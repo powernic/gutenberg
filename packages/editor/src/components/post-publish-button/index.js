@@ -114,6 +114,7 @@ export class PostPublishButton extends Component {
 			isPublished ||
 			isSaving ||
 			forceIsSaving ||
+			isPostSavingLocked ||
 			! isSaveable ||
 			( ! isPublishable && ! forceIsDirty );
 
